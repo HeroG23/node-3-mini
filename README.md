@@ -203,9 +203,9 @@ const { SERVER_PORT, CONNECTION_STRING } = process.env;
 massive(CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
 
-  // dbInstance.new_planes()
-  //   .then( planes => console.log( planes ) )
-  //   .catch( err => console.log( err ) );
+  dbInstance.new_planes()
+    .then( planes => console.log( planes ) )
+    .catch( err => console.log( err ) );
 
   dbInstance.get_planes()
     .then(planes => console.log(planes))
